@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+
+before_script:
+  - npm i -g firebase-tools
+script:
+  - npm install
+  - npm run build
+  - firebase use --token $FIREBASE_TOKEN logthe
+  - firebase deploy -m "build $TRAVIS_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+cache:
+  directories:
+    - "node_modules"
