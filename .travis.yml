@@ -7,7 +7,7 @@ before_script:
 script:
   - npm install
   - npm run build
-  - firebase use --token $FIREBASE_TOKEN logthe
+  - firebase use --token $FIREBASE_TOKEN logthe-01
   - firebase deploy -m "build $TRAVIS_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
 cache:
   directories:
